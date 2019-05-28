@@ -2237,8 +2237,9 @@
     var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
     var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
     var x = element.getBoundingClientRect();
+    var top = _isFixed(element)?x.top:x.top+scrollTop;
     return {
-      top: x.top + scrollTop,
+      top: top,
       width: x.width,
       height: x.height,
       left: x.left + scrollLeft
